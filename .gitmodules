@@ -1,0 +1,6 @@
+[submodule "website/themes/reveal-hugo"]
+	path = website/themes/reveal-hugo
+	url = https://github.com/dzello/reveal-hugo.git
+[submodule "website/.\\themes\\anybodyhome"]
+	path = website/.\\themes\\anybodyhome
+	url = https://github.com/lasseborly/anybodyhome.git

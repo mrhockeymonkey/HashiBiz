@@ -1,0 +1,7 @@
+theme = "anybodyhome"
+baseurl = "https://hugosite.com/"
+languageCode = "en-us"
+title = "Welcome to HashiBiz"
+
+[params]
+	subtitle = "A completely original company"
