@@ -1,7 +1,46 @@
-theme = "anybodyhome"
-baseurl = "https://hugosite.com/"
-languageCode = "en-us"
-title = "Welcome to HashiBiz"
+title = "HashiBiz"
+baseURL = "http://hashibiz.com"
+languageCode = "en-GB"
+config = "config.toml"
+theme = "osprey"
+canonifyURLS = true
+disableKinds = ["taxonomy", "taxonomyTerm"] # This theme does not currently use "tag" and "category" taxonomies
 
-[params]
-	subtitle = "A completely original company"
+[Params]
+    tagline = "HashiBiz"
+    #author = "Toma Nistor"
+    #description = "Full-stack web developer and UI/UX enthusiast based in San Diego, CA."
+    logoBig = "/images/hashicorp-logo-png-transparent.png"
+    logoSmall = "/images/hashicorp-logo-png-transparent.png"
+    favicon = "favicon.ico"
+    #opengraphImage = "/images/osprey.png"
+    #twitter = "TomaNistor"
+    #linkedin = "tomanistor"
+    #github = "tomanistor"
+    #facebook = ""
+    #email = ""
+    #googleTagManager = ""
+    highlightJS = true
+    #copyright = true
+    #credit = true
+    #customCSS = false
+    #cacheBustCSS = false
+    #cacheBustJS = false
+    #ajaxFormspree = true
+
+#[[menu.main]]
+#    name = "About"
+#    url  = "/#about"
+#    weight = 1
+#[[menu.main]]
+#    name = "Work"
+#    url  = "/#work"
+#    weight = 2
+#[[menu.main]]
+#    name = "Blog"
+#    url  = "/#blog"
+#    weight = 3
+#[[menu.main]]
+#    name = "Contact"
+#    url  = "/#contact"
+#    weight = 4

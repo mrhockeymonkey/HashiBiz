@@ -28,16 +28,6 @@ resource "azurerm_network_interface" "hashibiz-nic" {
   #}
 }
 
-#resource "azurerm_managed_disk" "hashibiz-disk" {
-#  count                = "${var.count}"
-#  name                 = "hashibiz-vm${count.index + 1}-disk"
-#  location             = "${var.location}"
-#  resource_group_name  = "${var.resource_group_name}"
-#  storage_account_type = "Premium_LRS"
-#  create_option        = "Empty"
-#  disk_size_gb         = "30"
-#}
-
 resource "azurerm_virtual_machine" "hashibiz-vm" {
   count                         = "${var.count}"
   name                          = "hashibiz-vm${count.index + 1}"
@@ -71,22 +61,24 @@ resource "azurerm_virtual_machine" "hashibiz-vm" {
 
     ssh_keys {
       path     = "/home/azureuser/.ssh/authorized_keys"
-      key_data = "${file("./id_rsa.pub")}"
+      key_data = "${file("~/.ssh/id_rsa.pub")}"
     }
   }
-  provisioner "remote-exec" {
-    inline = [
-      "wget https://github.com/gohugoio/hugo/releases/download/v0.42.2/hugo_0.42.2_Linux-64bit.deb",
-      "sudo dpkg -i hugo_0.42.2_Linux-64bit.deb",
-      "hugo version",
-    ]
 
-    connection {
-      type        = "ssh"
-      user        = "azureuser"
-      private_key = "${file("./id_rsa.ppk")}"
-    }
-  }
+  #provisioner "remote-exec" {
+  #  inline = [
+  #    "wget https://github.com/gohugoio/hugo/releases/download/v0.42.2/hugo_0.42.2_Linux-64bit.deb",
+  #    "sudo dpkg -i hugo_0.42.2_Linux-64bit.deb",
+  #    "hugo version",
+  #  ]
+  #
+  #  connection {
+  #    #host        = "${azurerm_public_ip.hashibiz-pubip.*.ip_address[count.index]}"
+  #    type        = "ssh"
+  #    user        = "azureuser"
+  #    private_key = "${file("~/.ssh/id_rsa")}"
+  #  }
+  #}
 
   #tags {
   #  environment = "Terraform Demo"

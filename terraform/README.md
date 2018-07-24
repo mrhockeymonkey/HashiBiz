@@ -1,3 +1,6 @@
+SSH Keys:
+used putty gen to generate key > save private as id_rsa.ppk and public as id_rsa.pub 
+
 Useful links:
 
 Consul module for Terraform - https://registry.terraform.io/modules/hashicorp/consul/azurerm/0.0.5

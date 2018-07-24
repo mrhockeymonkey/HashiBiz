@@ -67,5 +67,7 @@ module "hashibiz-vm" {
   resource_group_name = "${azurerm_resource_group.hashibiz-prod.name}"
   subnet_id           = "${azurerm_subnet.hashibiz-web.id}"
   availability_set_id = "${azurerm_availability_set.hashibiz-avset.id}"
-  count               = 1
+
+  # this cannot be 1! some logic behind the scenes seems to break when so
+  count = 2
 }
